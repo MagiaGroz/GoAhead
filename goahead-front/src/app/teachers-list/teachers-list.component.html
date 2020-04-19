@@ -1,1 +1,3 @@
-<p>teachers-list works!</p>
+<div *ngFor="let teacher of teachers" class="teacher_item">
+    <a [routerLink]="'/course/' + courseId + '/teachers/' + teacher.id">{{teacher.name}}</a>
+  </div>
