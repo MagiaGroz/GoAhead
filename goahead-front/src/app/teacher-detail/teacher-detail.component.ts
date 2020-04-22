@@ -4,11 +4,11 @@ import {BasicService} from '../basic.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-teachers-list',
-  templateUrl: './teachers-list.component.html',
-  styleUrls: ['./teachers-list.component.css']
+  selector: 'app-teacher-detail',
+  templateUrl: './teacher-detail.component.html',
+  styleUrls: ['./teacher-detail.component.css']
 })
-export class TeachersListComponent implements OnInit {
+export class TeacherDetailComponent implements OnInit {
   teachers: Teacher[]=[];
   courseId:string;
 

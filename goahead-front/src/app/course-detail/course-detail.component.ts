@@ -18,7 +18,6 @@ export class CourseDetailComponent implements OnInit {
   }
   getCourse() {
     const id = +this.route.snapshot.paramMap.get('id');
-
     this.basicService.getCourse(id).subscribe(course => this.course = course);
   }
 

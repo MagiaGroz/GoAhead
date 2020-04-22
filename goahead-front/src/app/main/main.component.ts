@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BasicService} from '../basic.service'
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private basicService: BasicService) { }
 
   ngOnInit(): void {
+  }
+
+  checkIfLoggedIn(){
+    return this.basicService.isLoggedIn;
+  }
+
+  checkIfSuperUser(){
+      return this.basicService.isSuperUser;
   }
 
 }

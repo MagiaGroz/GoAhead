@@ -1,26 +1,35 @@
-export class Course{
+export interface Course{
     id:number;
     name:string;
+    author: string;
+    photo: string;
     description:string;
     price:string;
-    teachers:Teacher;
 }
-export class Teacher{
+export interface Teacher{
     id:number;
     name:string;
-    photo:ImageBitmap;
-    university:string;
+    photo:string;
+    university:University;
     degree:number;
     reviews:Review;
 
 }
-export class Review{
+export interface Review{
     id:number;
+    author:string;
     description:string;
     liked:boolean;
-
+    teacher: Teacher;
 }
- export class Login{
+
+export interface University{
+    name: string;
+    description: string;
+    photo: string;
+    year: string;
+} 
+ export interface Login{
     token: string;
   }
   

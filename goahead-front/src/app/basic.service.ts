@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient, HttpParams } from '@angular/common/http';
 import {Course, Login,Teacher} from "./models";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasicService {
+  public isLoggedIn = false;
+  public isSuperUser = false;
   BASE_URL = 'http://localhost:8000'
 
   constructor(private http: HttpClient) { }
@@ -28,6 +30,12 @@ export class BasicService {
       password
     })
   }
+  logout() {
+      alert("Logged out")
+  }
+  createUser(){
+      alert('signed up')
+  }
  
   getTeachersByCourse(pk: string): Observable<Teacher[]> {
     return this.http.get<Teacher[]>(`${this.BASE_URL}/api/courses/${pk}/teachers`);
@@ -35,6 +43,11 @@ export class BasicService {
   getTeacherById(pk: string): Observable<Teacher> {
     return this.http.get<Teacher>(`${this.BASE_URL}/api/teachers/${pk}`);
   }
+
+
   
+
+
+    
 
 }

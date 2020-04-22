@@ -1,1 +1,10 @@
-<p>header works!</p>
+<div class="header-top">
+    <h1>GoAhead!</h1>
+    <nav class="header_nav">
+        <a routerLink="">To the main page</a>
+        <a (click)="admin()" *ngIf="isSuperUser">Admin Page</a>
+        <a (click)="signUp()" *ngIf="!isLoggedIn">Sign up</a>
+        <a (click)="login()" *ngIf="!isLoggedIn">Log in</a>
+        <a routerLink="" *ngIf="isLoggedIn" (click)="logout()">Log out</a>
+    </nav>
+</div>
