@@ -1,45 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
-import {Course, Teacher, University} from '../models';
->>>>>>> 7355cf3f8a654514c4825f0c2f70f0dd8ea9f750
+import {Course, Teacher, University, Review} from '../models';
 import {BasicService} from '../basic.service';
 import {ActivatedRoute} from '@angular/router';
-import {Teacher} from "../models";
+
 @Component({
   selector: 'app-teacher-detail',
   templateUrl: './teacher-detail.component.html',
   styleUrls: ['./teacher-detail.component.css']
 })
 export class TeacherDetailComponent implements OnInit {
-<<<<<<< HEAD
-  teacher:Teacher;
-  teacherId:string;
-
-  constructor(private basicService: BasicService, private route: ActivatedRoute) {
-    this.route.paramMap.subscribe(params => {
-      this.teacherId = params.get('teacherId');
-    });
-   }
-
-  ngOnInit(): void {
-    this.getTeacheryById(this.teacherId);
-  }
-  getTeacheryById(id: string) {
-    this.basicService.getTeacherById(id)
-      .subscribe(teacher => {
-        this.teacher = teacher;
-      });
-  }
-=======
     teacher: Teacher;
     teachersUniversities: University[]=[];
+    reviews: Review[]=[];
+    positiveReviews: Review[]=[];
+    negativeReviews: Review[]=[];
+    isNegative: boolean = false;
+    isPositive: boolean = false;
+    isDefault: boolean = true;
     constructor(private basicService: BasicService, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
         this.getTeacher();
         this.getUniversityByTeacher();
+        this.getReviews();
+        this.getPositiveReviews();
+        this.getNegativeReviews();
     }
+
+    onDefault(){
+        this.isDefault = true;
+        this.isNegative = false;
+        this.isPositive = false;
+    }
+
+    onPositive(){
+        this.isDefault = false;
+        this.isNegative = false;
+        this.isPositive = true;
+    }
+
+    onNegative(){
+        this.isDefault = false;
+        this.isNegative = true;
+        this.isPositive = false;
+    }
+
     getTeacher() {
         const id = +this.route.snapshot.paramMap.get('id');
         this.basicService.getTeacher(id).subscribe(teacher => this.teacher = teacher);
@@ -49,5 +54,17 @@ export class TeacherDetailComponent implements OnInit {
             this.teachersUniversities = teachersUniversities
         });
     }
->>>>>>> 7355cf3f8a654514c4825f0c2f70f0dd8ea9f750
+    getReviews(){
+        this.basicService.getReviewsByTeacher(this.teacher.id.toString()).subscribe(reviews=>{this.reviews = reviews});
+    }
+    getPositiveReviews(){
+        this.basicService.getPositiveReviewsByTeacher(this.teacher.id.toString()).subscribe(positiveReviews =>{
+            this.positiveReviews = positiveReviews
+        });
+    }
+    getNegativeReviews() {
+        this.basicService.getNegativeReviewsByTeacher(this.teacher.id.toString()).subscribe(negativeReviews => {
+            this.negativeReviews = negativeReviews
+        });
+    }
 }
