@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { ReviewComponent } from './review/review.component';
+import { UniversityListComponent } from './university-list/university-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReviewComponent } from './review/review.component';
     LoginComponent,
     RegistrationComponent,
     MyCoursesComponent,
-    ReviewComponent
+    ReviewComponent,
+    UniversityListComponent
   ],
   imports: [
     BrowserModule,

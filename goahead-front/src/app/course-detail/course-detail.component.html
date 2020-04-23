@@ -1,1 +1,5 @@
-<p>course-detail works!</p>
+<div *ngIf="course">
+    <p>Id: {{ course.id }}</p>
+    <p>Name: {{ course.name}}</p>
+  </div>
+  <a [routerLink]="'/course/' + course.id + '/teachers'">Teachers</a>

@@ -24,3 +24,10 @@ export class Review{
     token: string;
   }
   
+export class University{
+    id:number;
+    name:string;
+    description:string;
+    image_ref:string;
+    year:string;
+}

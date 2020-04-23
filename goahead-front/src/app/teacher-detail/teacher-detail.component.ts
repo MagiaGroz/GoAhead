@@ -1,26 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import {Course, Teacher} from '../models';
 import {BasicService} from '../basic.service';
 import {ActivatedRoute} from '@angular/router';
-
+import {Teacher} from "../models";
 @Component({
-  selector: 'app-teachers-list',
-  templateUrl: './teachers-list.component.html',
-  styleUrls: ['./teachers-list.component.css']
+  selector: 'app-teacher-detail',
+  templateUrl: './teacher-detail.component.html',
+  styleUrls: ['./teacher-detail.component.css']
 })
-export class TeachersListComponent implements OnInit {
-  teachers: Teacher[]=[];
-  courseId:string;
+export class TeacherDetailComponent implements OnInit {
+  teacher:Teacher;
+  teacherId:string;
 
-  constructor(private basicService: BasicService, private route: ActivatedRoute) { }
+  constructor(private basicService: BasicService, private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(params => {
+      this.teacherId = params.get('teacherId');
+    });
+   }
 
   ngOnInit(): void {
-    this.getTeachersByCourse(this.courseId);
+    this.getTeacheryById(this.teacherId);
   }
-  
-  getTeachersByCourse(id:string){
-    this.basicService.getTeachersByCourse(id).subscribe(teachers =>{
-      this.teachers=teachers;
-    })
+  getTeacheryById(id: string) {
+    this.basicService.getTeacherById(id)
+      .subscribe(teacher => {
+        this.teacher = teacher;
+      });
   }
 }
