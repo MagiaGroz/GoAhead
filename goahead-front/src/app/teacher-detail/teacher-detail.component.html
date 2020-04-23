@@ -7,5 +7,21 @@
         <a [routerLink]="'/universities/' + university.id">{{university.name}}</a>
     </div>
     <p>Teacher degree:{{teacher.degree}}</p>
-    <p>Teacher reviews:{{teacher.reviews}}</p>
+    <div>
+        <button (click)="onDefault()">All</button>
+        <button (click)="onPositive()">Positive</button>
+        <button (click)="onNegative()">Negative</button>
+    </div>
+    <div *ngIf="isDefault" *ngFor="let review of reviews">
+        <div>{{review.author}}</div>
+        <div>{{review.description}}</div>
+    </div>
+    <div *ngIf="isPositive" *ngFor="let positivereview of positiveReviews">
+        <div>{{positivereview.author}}</div>
+        <div>{{positivereview.description}}</div>
+    </div>
+    <div *ngIf="isNegative" *ngFor="let negativereview of negativeReviews">
+        <div>{{negativereview.author}}</div>
+        <div>{{negativereview.description}}</div>
+    </div>
 </div>
