@@ -1,6 +1,8 @@
 <div class="header-top">
-    <h1>GoAhead!</h1>
     <nav class="header_nav">
+        <h1>GoAhead!</h1>
+        <a routerLink="courses">Courses</a>
+        <a routerLink="teachers">Teachers</a>
         <a routerLink="">To the main page</a>
         <a (click)="admin()" *ngIf="isSuperUser">Admin Page</a>
         <a (click)="signup()" *ngIf="!isLoggedIn">Sign up</a>

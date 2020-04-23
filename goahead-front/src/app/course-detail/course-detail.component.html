@@ -2,6 +2,10 @@
     <div class="course_name">{{course.name}}</div>
     <img class="course_photo" src="{{course.photo}}">
     <div class="course_description">{{course.description}}</div>
+    <div *ngFor="let teacher of courseTeachers">
+        <img src="{{teacher.photo}}">
+        <a [routerLink]="'/teachers/' + teacher.id">{{teacher.name}}</a>
+    </div>
     <div class="course_price">{{course.price}}</div>
     <div class="course_author">{{course.author}}</div>
 </div>

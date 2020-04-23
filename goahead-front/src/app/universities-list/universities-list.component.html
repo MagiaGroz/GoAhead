@@ -1,0 +1,4 @@
+<div *ngFor="let university of universities">
+    <img src="{{university.photo}}">
+    <a routerLink="'/universities/' + university.id">{{university.name}}</a>
+</div>

@@ -15,6 +15,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { ReviewComponent } from './review/review.component';
 import { FormsModule } from '@angular/forms';
+import { UniversitiesListComponent } from './universities-list/universities-list.component';
+import { UniversityDetailComponent } from './university-detail/university-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegistrationComponent,
     MyCoursesComponent,
-    ReviewComponent
+    ReviewComponent,
+    UniversitiesListComponent,
+    UniversityDetailComponent
   ],
   imports: [
     BrowserModule,

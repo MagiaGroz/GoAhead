@@ -12,7 +12,7 @@ export interface Teacher{
     photo:string;
     university:University;
     degree:number;
-    reviews:Review;
+    reviews:Review[];
 
 }
 export interface Review{
