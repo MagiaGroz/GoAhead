@@ -9,18 +9,15 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./teacher-detail.component.css']
 })
 export class TeacherDetailComponent implements OnInit {
-  teachers: Teacher[]=[];
-  courseId:string;
+    teacher: Teacher;
 
-  constructor(private basicService: BasicService, private route: ActivatedRoute) { }
+    constructor(private basicService: BasicService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.getTeachersByCourse(this.courseId);
-  }
-  
-  getTeachersByCourse(id:string){
-    this.basicService.getTeachersByCourse(id).subscribe(teachers =>{
-      this.teachers=teachers;
-    })
-  }
+    ngOnInit(): void {
+        this.getTeacher();
+    }
+    getTeacher() {
+        const id = +this.route.snapshot.paramMap.get('id');
+        this.basicService.getTeacher(id).subscribe(teacher => this.teacher = teacher);
+    }
 }

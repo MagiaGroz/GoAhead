@@ -3,6 +3,7 @@ import {Observable, of} from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import {Course, Login,Teacher} from "./models";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +19,10 @@ export class BasicService {
 
   getCourse(id): Observable<Course> {
     return this.http.get<Course>(`${this.BASE_URL}/api/courses/${id}/`);
+  }
+
+  getTeacher(id): Observable<Teacher> {
+      return this.http.get<Teacher>(`${this.BASE_URL}/api/teachers/${id}/`);
   }
 
   deleteCourse(id): Observable<any> {
@@ -48,6 +53,6 @@ export class BasicService {
   
 
 
-    
+ 
 
 }
