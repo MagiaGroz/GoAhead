@@ -15,12 +15,10 @@ export class TeachersListComponent implements OnInit {
   constructor(private basicService: BasicService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getTeachersByCourse(this.courseId);
+    this.getTeacherList()
   }
   
-  getTeachersByCourse(id:string){
-    this.basicService.getTeachersByCourse(id).subscribe(teachers =>{
-      this.teachers=teachers;
-    })
+  getTeacherList(){
+    this.basicService.getTeacherList().subscribe(teachers => {this.teachers = teachers});
   }
 }

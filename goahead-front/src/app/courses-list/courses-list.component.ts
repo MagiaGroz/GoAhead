@@ -20,10 +20,5 @@ export class CoursesListComponent implements OnInit {
     });
   }
 
-  deleteCourse(id) {
-    this.basicService.deleteCourse(id).subscribe(res => {
-       this.courses = this.courses.filter(c => c.id != id);
-       this.getCourseList();
-    });
-}
+  
 }

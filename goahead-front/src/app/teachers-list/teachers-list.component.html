@@ -1,3 +1,4 @@
 <div *ngFor="let teacher of teachers" class="teacher_item">
-    <a [routerLink]="'/course/' + courseId + '/teachers/' + teacher.id">{{teacher.name}}</a>
-  </div>
+    <img src="{{teacher.photo}}">
+    <a [routerLink]="'/teachers/' + teacher.id">{{teacher.name}}</a>
+</div>

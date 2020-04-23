@@ -1,9 +1,11 @@
 <p>Taecher Details</p>
 <div *ngIf="teacher">
-  <p>Teacher id: {{teacher.id}}</p>
-  <p>Teacher name: {{teacher.name}}</p>
-  <p>Teacher photo:{{teacher.photo}}</p>
-  <p>Teacher university:{{teacher.university}}</p>
-  <p>Teacher degree:{{teacher.degree}}</p>
-  <p>Teacher reviews:{{teacher.reviews}}</p>
+    <p>Teacher id: {{teacher.id}}</p>
+    <p>Teacher name: {{teacher.name}}</p>
+    <p>Teacher photo:{{teacher.photo}}</p>
+    <div *ngFor="let university of teachersUniversities">
+        <a [routerLink]="'/universities/' + university.id">{{university.name}}</a>
+    </div>
+    <p>Teacher degree:{{teacher.degree}}</p>
+    <p>Teacher reviews:{{teacher.reviews}}</p>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BasicService} from '../basic.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -6,10 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
-  constructor() { }
+  public password: string;
+  public username: string;
+  public repeatedPassword: string;
+  constructor(private router: Router, private basicService: BasicService) { }
 
   ngOnInit(): void {
   }
 
+  closeSignUpWindow(){
+      this.router.navigateByUrl('').then();
+  }
+
+  signUp(){
+      if (this.username === '' || this.password === '' || this.repeatedPassword === '') {
+          alert('Fill in all the fields.');
+      } else {
+          if (this.password !== this.repeatedPassword) {
+              alert('Passwords do not match, please make sure that your passwords match.');
+          } else {
+            this.basicService.createUser()//.then(res => {
+                  //alert('You have successgully signed up!');
+                  //this.basicService.login(this.username, this.password).then(res => {
+                  //    localStorage.setItem('token', res.token);
+                  //    this.basicService.isLoggedIn = true;
+                  //    this.router.navigateByUrl('').then();
+                  //});
+              //});
+          }
+      }
+  }
 }
