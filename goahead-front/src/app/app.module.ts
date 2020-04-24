@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
@@ -14,13 +14,12 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { ReviewComponent } from './review/review.component';
-<<<<<<< HEAD
-import { UniversityListComponent } from './university-list/university-list.component';
-=======
 import { FormsModule } from '@angular/forms';
 import { UniversitiesListComponent } from './universities-list/universities-list.component';
 import { UniversityDetailComponent } from './university-detail/university-detail.component';
->>>>>>> 7355cf3f8a654514c4825f0c2f70f0dd8ea9f750
+import { UniversityComponent } from './university/university.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -36,17 +35,17 @@ import { UniversityDetailComponent } from './university-detail/university-detail
     RegistrationComponent,
     MyCoursesComponent,
     ReviewComponent,
-<<<<<<< HEAD
-    UniversityListComponent
-=======
     UniversitiesListComponent,
-    UniversityDetailComponent
->>>>>>> 7355cf3f8a654514c4825f0c2f70f0dd8ea9f750
+    UniversityDetailComponent,
+    UniversityComponent,
+    TeacherComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

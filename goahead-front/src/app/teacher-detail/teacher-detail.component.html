@@ -4,7 +4,7 @@
     <p>Teacher name: {{teacher.name}}</p>
     <p>Teacher photo:{{teacher.photo}}</p>
     <div *ngFor="let university of teachersUniversities">
-        <a [routerLink]="'/universities/' + university.id">{{university.name}}</a>
+        <app-university [university]="university"></app-university>
     </div>
     <p>Teacher degree:{{teacher.degree}}</p>
     <div>
@@ -12,16 +12,22 @@
         <button (click)="onPositive()">Positive</button>
         <button (click)="onNegative()">Negative</button>
     </div>
-    <div *ngIf="isDefault" *ngFor="let review of reviews">
-        <div>{{review.author}}</div>
-        <div>{{review.description}}</div>
+    <div *ngIf="isDefault">
+        <div *ngFor="let review of reviews">
+            <div>{{review.author}}</div>
+            <div>{{review.description}}</div>
+        </div>
     </div>
-    <div *ngIf="isPositive" *ngFor="let positivereview of positiveReviews">
-        <div>{{positivereview.author}}</div>
-        <div>{{positivereview.description}}</div>
+    <div *ngIf="isPositive">
+        <div *ngFor="let positivereview of positiveReviews">
+            <div>{{positivereview.author}}</div>
+            <div>{{positivereview.description}}</div>
+        </div>
     </div>
-    <div *ngIf="isNegative" *ngFor="let negativereview of negativeReviews">
-        <div>{{negativereview.author}}</div>
-        <div>{{negativereview.description}}</div>
+    <div *ngIf="isNegative">
+        <div *ngFor="let negativereview of negativeReviews">
+            <div>{{negativereview.author}}</div>
+            <div>{{negativereview.description}}</div>
+        </div>
     </div>
 </div>
