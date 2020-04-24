@@ -9,7 +9,6 @@ from ..serializers import CourseSerializer, TeacherSerializer, UniversitySeriali
 class UniversityListAPIView(generics.ListCreateAPIView):
     queryset = University.objects.all()
     serializer_class = UniversitySerializer
-   # permission_classes = (IsAuthenticated,)
 
 class CourseListAPIView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
