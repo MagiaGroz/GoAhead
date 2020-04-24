@@ -16,17 +16,19 @@ export class HeaderComponent implements OnInit {
   public isSuperUser;
   ngOnInit(): void {
   }
-  admin(){
-    this.router.navigateByUrl('').then();
-  }
   signup(){
-      this.router.navigateByUrl('').then();
+      this.router.navigateByUrl('signup').then();
   }
   login(){
-    this.router.navigateByUrl('').then();
+      this.router.navigateByUrl('login').then();
   }
   logout(){
-    this.basicService.logout();
+      this.basicService.logout().then(res => {
+          localStorage.removeItem('token');
+          this.basicService.isLoggedIn = false;
+          this.basicService.isSuperUser = false;
+          this.router.navigateByUrl('').then();
+      });
   }
 
 }

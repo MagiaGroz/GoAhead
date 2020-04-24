@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Course(models.Model):
     name=models.CharField(max_length=400, default='Golang')
     author=models.CharField(max_length=400, default='MIT')
@@ -72,3 +71,4 @@ class Review(models.Model):
             'description':self.description,
             'liked':self.liked,
         }
+

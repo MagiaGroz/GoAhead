@@ -13,10 +13,7 @@ export class UniversityDetailComponent implements OnInit {
   constructor(private basicService: BasicService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getUniversity();
+    this.university = this.basicService.getSelectedUniversity();
   }
-  getUniversity() {
-      const id = +this.route.snapshot.paramMap.get('id');
-      this.basicService.getUniversity(id).subscribe(university => this.university = university);
-  }
+  
 }
