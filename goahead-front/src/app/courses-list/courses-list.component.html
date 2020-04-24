@@ -1,5 +1,4 @@
 <h2>All possible courses for you!</h2>
 <div *ngFor="let course of courses">
-    <img src="{{course.photo}}">
-    <a [routerLink]="'/course/' + course.id">{{ course.name }}</a>
+    <app-course [course]=course></app-course>
 </div>
