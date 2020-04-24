@@ -14,18 +14,16 @@ export class CourseDetailComponent implements OnInit {
   constructor(private basicService:BasicService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getCourse();
+    this.course = this.basicService.getSelectedCourse();
     this.getTeacherByCourse();
   }
-  getCourse() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.basicService.getCourse(id).subscribe(course => this.course = course);
-  }
+  
   getTeacherByCourse(){
       this.basicService.getTeachersByCourse(this.course.id.toString()).subscribe(courseTeachers=>{
           this.courseTeachers = courseTeachers
       });
   }
+  
 
 
 }

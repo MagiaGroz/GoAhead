@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-<div *ngIf="course">
-    <p>Id: {{ course.id }}</p>
-    <p>Name: {{ course.name}}</p>
-  </div>
-  <a [routerLink]="'/course/' + course.id + '/teachers'">Teachers</a>
-=======
 <div class="course_detail">
     <div class="course_name">{{course.name}}</div>
     <img class="course_photo" src="{{course.photo}}">
     <div class="course_description">{{course.description}}</div>
     <div *ngFor="let teacher of courseTeachers">
-        <img src="{{teacher.photo}}">
-        <a [routerLink]="'/teachers/' + teacher.id">{{teacher.name}}</a>
+        <app-teacher [teacher]="teacher"></app-teacher>
     </div>
     <div class="course_price">{{course.price}}</div>
     <div class="course_author">{{course.author}}</div>
 </div>
->>>>>>> 7355cf3f8a654514c4825f0c2f70f0dd8ea9f750
