@@ -1,19 +1,49 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import {Course, Login,Teacher, University, Review} from "./models";
+import {Course, Token,Teacher, University, Review} from "./models";
+import { ParentService } from './parent.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class BasicService {
+export class BasicService extends ParentService {
+  public selectedCourse: Course;
+  public selectedTeacher:Teacher;
+  public selectedUniversity: University;
+  public username: string;
   public isLoggedIn = false;
   public isSuperUser = false;
   BASE_URL = 'http://localhost:8000'
 
-  constructor(private http: HttpClient) { }
+    constructor(http: HttpClient) {
+        super(http);
+    }
 
+  //setting and getting fields for detailed view
+  setCourseForDetailedView(course: Course){
+      this.selectedCourse = course;
+  }
+  getSelectedCourse(): Course{
+      return this.selectedCourse;
+  }
+
+  setTeacherForDetailedView(teacher: Teacher){
+      this.selectedTeacher = teacher;
+  }
+  getSelectedTeacher(): Teacher{
+      return this.selectedTeacher;
+  }
+
+  setUniversityForDetailView(university: University){
+    this.selectedUniversity = university;
+  }
+  getSelectedUniversity(): University{
+      return this.selectedUniversity;
+  }
+
+  //methods for django views
   getCourseList(): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.BASE_URL}/api/courses/`);
   }
@@ -59,26 +89,34 @@ export class BasicService {
   }
 
 
-
   deleteCourse(id): Observable<any> {
     return this.http.delete(`${this.BASE_URL}/api/courses/${id}/`);
   }
-
-
-
-  login(username, password): Observable<Login> {
-    return this.http.post<Login>(`${this.BASE_URL}/api/login/`, {
-      username,
-      password
-    })
+  deleteTeacher(id): Observable<any> {
+      return this.http.delete(`${this.BASE_URL}/api/teachers/${id}/`);
   }
-  logout() {
-      alert("Logged out")
+  deleteUniversity(id): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/api/universities/${id}/`);
   }
-  createUser(){
-      alert('signed up')
+
+  
+
+  //authentication
+  createUser(usernamE: string, passworD: string) {
+    return this.post(`${this.BASE_URL}/signup`, {
+        username: usernamE,
+        password: passworD
+    });
   }
- 
+  login(usernamE: string, passworD: string): Promise<Token> {
+    return this.post(`${this.BASE_URL}/login/`, {
+      username: usernamE,
+      password: passworD
+    });
+  }
+  logout(): Promise<any> {
+    return this.post(`${this.BASE_URL}/logout`, {});
+  }
 
 
   
