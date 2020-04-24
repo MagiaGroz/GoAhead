@@ -12,8 +12,13 @@ export class CoursesListComponent implements OnInit {
   constructor(public basicService:BasicService) { }
 
   ngOnInit(): void {
-      this.basicService.getCourseList().subscribe(courses => {
-          this.courses = courses
-      });
-    } 
+    this.getCourseList();
+  }
+  getCourseList(){
+    this.basicService.getCourseList().subscribe(courses =>{
+      this.courses=courses
+    });
+  }
+
+  
 }
