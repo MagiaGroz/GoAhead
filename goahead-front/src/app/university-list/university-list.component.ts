@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {University,Teacher} from '../models';
+import { BasicService } from '../basic.service';
 @Component({
   selector: 'app-university-list',
   templateUrl: './university-list.component.html',
@@ -7,9 +8,16 @@ import {University,Teacher} from '../models';
 })
 export class UniversityListComponent implements OnInit {
 
-  constructor() { }
+    universities: University[] = [];
 
-  ngOnInit(): void {
-  }
+    constructor(private basicService: BasicService) { }
+
+    ngOnInit(): void {
+        this.getUniversityList()
+    }
+
+    getUniversityList() {
+        this.basicService.getUniversityList().subscribe(universities => { this.universities = universities });
+    }
 
 }
