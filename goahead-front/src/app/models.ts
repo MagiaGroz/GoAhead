@@ -5,6 +5,7 @@ export interface Course{
     photo: string;
     description:string;
     price:string;
+    user:number;
 }
 export interface Teacher{
     id:number;
@@ -12,7 +13,7 @@ export interface Teacher{
     photo:string;
     university:University;
     degree:number;
-    reviews:Review[];
+    course:Course;
 
 }
 export interface Review{
@@ -25,8 +26,8 @@ export interface Review{
 
 export interface University{
     name: string;
-    description: string;
     photo: string;
+    description: string;
     year: string;
 } 
  export interface Token{
