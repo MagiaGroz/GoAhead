@@ -24,19 +24,19 @@ export class LoginComponent implements OnInit {
           alert('Fill in all the fields!');
       } else {
           alert('Logged in!');
-        //   this.provider.login(this.username, this.password).then(res => {
-        //       localStorage.setItem('token', res.token);
-        //       this.provider.logged = true;
-        //       this.isAdmin();
-        //       this.provider.username = this.username;
-        //       alert('Добро пожаловать!');
-        //       this.router.navigateByUrl('');
-        //   })
-        //       .catch(res => {
-        //           alert('You may mistyped your login or password. Try again!');
-        //           this.username = '';
-        //           this.password = '';
-        //       });
+          this.basicService.login(this.username, this.password).then(res => {
+              localStorage.setItem('token', res.token);
+              this.basicService.isLoggedIn = true;
+              //this.isAdmin();
+              this.basicService.username = this.username;
+              alert('Добро пожаловать!');
+              this.router.navigateByUrl('');
+          })
+              .catch(res => {
+                  alert('You may mistyped your login or password. Try again!');
+                  this.username = '';
+                  this.password = '';
+              });
 
       }
   }
