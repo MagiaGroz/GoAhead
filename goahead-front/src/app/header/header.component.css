@@ -154,3 +154,7 @@ a {
   border-color: #2F75F3;
 
 }
+body {
+  margin: 0;
+  padding: 0;
+  }

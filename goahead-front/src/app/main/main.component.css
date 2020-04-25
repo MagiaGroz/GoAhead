@@ -3,7 +3,7 @@ border: 5px solid rgb(89, 149, 233);
 }
 .main{
     text-align:center;
-    font-size:30px;
+    font-size:50px;
     font-family: Arial, Helvetica, sans-serif;
     color:rgb(89, 149, 233);
 }
@@ -16,7 +16,57 @@ border: 5px solid rgb(89, 149, 233);
     
     
 }
+#sub{
+    margin-left:650px;
+    font-size:50px;
+    background-color: rgb(103, 161, 231);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
 #submit{
-    margin-left:800px;
+    margin-left:650px;
+    font-size:50px;
+    background-color: rgb(103, 161, 231);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 10px;
+   
+}
+.lesson{
     font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(89, 149, 233);
+    background-size: 300px 100px;
+    text-align:center;
+    display:flex;
+    margin-left:600px;
+    
+
+}
+#img{
+    font-size:15px;
+    margin-left:600px;
+    padding:60px;
+    margin-top:0px;
+    display:flex;
+  
+}
+#i{
+    margin-top: 20px;
+    display:flex;
+    font-size:30px;
+    margin-left: 600px;
+    margin-bottom: 10px;
 }

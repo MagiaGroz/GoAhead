@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { BasicService } from "../basic.service";
 
+
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -12,6 +13,8 @@ export class HeaderComponent implements OnInit {
     courses: false,
     teachers: false,
     universities: false,
+    
+
   };
 
   dropdownMenuDisplay(name) {
@@ -48,4 +51,5 @@ export class HeaderComponent implements OnInit {
       this.router.navigateByUrl("").then();
     });
   }
+ s
 }

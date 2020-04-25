@@ -6,12 +6,12 @@
     justify-content: space-around;
     flex-direction: column;
     color: #FFF;
-    background: rgb(34, 9, 47);
+    background:rgb(104, 147, 226);
     box-sizing: border-box;
     line-height: 1;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
-    
+
   }
   .footer-top{
     width: 100%;
