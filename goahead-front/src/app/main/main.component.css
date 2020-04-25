@@ -1,24 +1,25 @@
-.div{
-border: 5px solid rgb(89, 149, 233);
-}
-.main{
-    text-align:center;
-    font-size:50px;
+.div {
     font-family: Arial, Helvetica, sans-serif;
-    color:rgb(89, 149, 233);
 }
-#intro{
-    font-size:30px;
+
+.main {
+    text-align: center;
+    font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
-    color:rgb(89, 149, 233);
+    color: rgb(89, 149, 233);
+}
+
+#intro {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(89, 149, 233);
     background-size: 300px 100px;
-    text-align:center;
-    
-    
+    text-align: center;
 }
-#sub{
-    margin-left:650px;
-    font-size:50px;
+
+#sub {
+    margin-left: 650px;
+    font-size: 50px;
     background-color: rgb(103, 161, 231);
     border: none;
     color: white;
@@ -28,11 +29,11 @@ border: 5px solid rgb(89, 149, 233);
     display: inline-block;
     cursor: pointer;
     margin-bottom: 10px;
-
 }
-#submit{
-    margin-left:650px;
-    font-size:50px;
+
+#submit {
+    margin-left: 650px;
+    font-size: 50px;
     background-color: rgb(103, 161, 231);
     border: none;
     color: white;
@@ -42,31 +43,51 @@ border: 5px solid rgb(89, 149, 233);
     display: inline-block;
     cursor: pointer;
     margin-bottom: 10px;
-   
 }
-.lesson{
-    font-size:30px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:rgb(89, 149, 233);
-    background-size: 300px 100px;
-    text-align:center;
-    display:flex;
-    margin-left:600px;
-    
 
+.go-logo {
+    color: #2F75F3;
 }
-#img{
-    font-size:15px;
-    margin-left:600px;
-    padding:60px;
-    margin-top:0px;
-    display:flex;
-  
+
+.logo {
+    font-size: 4rem;
+    color: rgb(195, 42, 255);
+    font-weight: 700;
 }
-#i{
+
+.lesson {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(89, 149, 233);
+    background-size: 300px 100px;
+    text-align: center;
+    display: flex;
+    margin-left: 600px;
+}
+
+#img {
+    font-size: 15px;
+    margin-left: 600px;
+    padding: 60px;
+    margin-top: 0px;
+    display: flex;
+}
+
+#i {
     margin-top: 20px;
-    display:flex;
-    font-size:30px;
+    display: flex;
+    font-size: 30px;
     margin-left: 600px;
     margin-bottom: 10px;
+}
+
+.top-footer {
+    text-align: center;
+    align-content: center;
+    margin-top: 100px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
