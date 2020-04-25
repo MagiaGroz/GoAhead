@@ -1,5 +1,12 @@
-<div>
+<div class="div">
     <app-header [isLoggedIn]="checkIfLoggedIn()" [isSuperUser]="checkIfSuperUser()"></app-header>
     <router-outlet></router-outlet>
+        <h1 class="main">Motivation to continue
+            We select a teacher for your goals, we teach on interactive tasks according to your interests.</h1>
+            
+        <h1 id="intro">Take an introductory lesson<br>
+            We will get to know each other, determine the level and show<br>
+             how training takes place in a free lesson</h1>    
+             <button id="submit"(click)="click()">Submit your application</button>
+    </div>
     <app-footer></app-footer>
-</div>

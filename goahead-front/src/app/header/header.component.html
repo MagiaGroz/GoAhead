@@ -1,12 +1,89 @@
 <div class="header-top">
-    <nav class="header_nav">
-        <h1>GoAhead!</h1>
-        <a routerLink="courses">Courses</a>
-        <a routerLink="teachers">Teachers</a>
-        <a routerLink="universities">Universities</a>
-        <a routerLink="">To the main page</a>
-        <a (click)="signup()" *ngIf="!isLoggedIn">Sign up</a>
-        <a (click)="login()" *ngIf="!isLoggedIn">Log in</a>
-        <a *ngIf="isLoggedIn" (click)="logout()">Log out</a>
+    <nav class="header-nav">
+  
+  
+      <div class="nav-links">
+        <ul class="left-links">
+  
+          <li class="nav-link nav-logo">
+            <a routerLink="">GoAhead!</a>
+          </li>
+          <li class="nav-link dropdown-menu" (mouseenter)="dropdownMenuDisplay('courses')" (mouseleave)="dropdownMenuHide('courses')">
+            <a routerLink="courses">
+              <span class="link-name">Courses</span>
+              <span class="dropdown-btn">▾</span>
+            </a>
+            <div class="options-window-container" *ngIf="displayDropdownWindows.courses">
+              <ul class="options">
+                <li class="option">
+                  <div class="option-name">Calculus II</div>
+                </li>
+                <li class="option">
+                  <div class="option-name">Calculus I</div>
+                </li>
+                <li class="option">
+                  <div class="option-name">Differential Equations</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-link dropdown-menu" (mouseenter)="dropdownMenuDisplay('teachers')" (mouseleave)="dropdownMenuHide('teachers')">
+            <a routerLink="teachers">
+              <span class="link-name">Teachers</span>
+              <span class="dropdown-btn">▾</span>
+            </a>
+            <div class="options-window-container" *ngIf="displayDropdownWindows.teachers">
+              <ul class="options">
+                <li class="option">
+                  <div class="option-name">Calculus II</div>
+                </li>
+                <li class="option">
+                  <div class="option-name">Calculus I</div>
+                </li>
+                <li class="option">
+                  <div class="option-name">Differential Equations</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-link dropdown-menu" (mouseenter)="dropdownMenuDisplay('universities')" (mouseleave)="dropdownMenuHide('universities')">
+            <a routerLink="universities">
+              <span class="link-name">Universities</span>
+              <span class="dropdown-btn">▾</span>
+            </a>
+            <div class="options-window-container" *ngIf="displayDropdownWindows.universities">
+              <ul class="options">
+                <li class="option">
+                  <div class="option-name">Calculus II</div>
+                </li>
+                <li class="option">
+                  <div class="option-name">Calculus I</div>
+                </li>
+                <li class="option">
+                  <div class="option-name">Differential Equations</div>
+                </li>
+              </ul>
+            </div>
+          </li>
+  
+        </ul>
+        <ul class="right-links">
+          <li class="nav-link">
+            <a routerLink="">
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a id="signup-btn" (click)="signup()" *ngIf="!isLoggedIn">Sign up</a>
+          </li>
+          <li class="nav-link">
+            <a id="login-logout-btn" (click)="isLoggedIn ? logout() : login() ">{{ isLoggedIn ? 'Logout' : 'Login'}}</a>
+          </li>
+          <!-- <li class="nav-link">
+            <a id="logout-btn" (click)="logout()" *ngIf="!isLoggedIn">Logout</a>
+          </li> -->
+        </ul>
+      </div>
     </nav>
-</div>
+  </div>
+  

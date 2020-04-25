@@ -1,0 +1,22 @@
+.div{
+border: 5px solid rgb(89, 149, 233);
+}
+.main{
+    text-align:center;
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(89, 149, 233);
+}
+#intro{
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(89, 149, 233);
+    background-size: 300px 100px;
+    text-align:center;
+    
+    
+}
+#submit{
+    margin-left:800px;
+    font-size:30px;
+}

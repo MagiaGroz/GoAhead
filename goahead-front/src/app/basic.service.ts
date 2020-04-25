@@ -109,13 +109,13 @@ export class BasicService extends ParentService {
     });
   }
   login(usernamE: string, passworD: string): Promise<Token> {
-    return this.post(`${this.BASE_URL}/login`, {
+    return this.post(`${this.BASE_URL}/login/`, {
       username: usernamE,
       password: passworD
     });
   }
   logout(): Promise<any> {
-    return this.post(`${this.BASE_URL}/logout`, {});
+    return this.post(`${this.BASE_URL}/logout/`, {});
   }
 
 
