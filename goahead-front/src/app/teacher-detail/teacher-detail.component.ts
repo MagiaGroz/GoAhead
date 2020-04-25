@@ -50,20 +50,20 @@ export class TeacherDetailComponent implements OnInit {
         this.basicService.getTeacher(id).subscribe(teacher => this.teacher = teacher);
     }
     getUniversityByTeacher() {
-        this.basicService.getUniversitiesByTeacher(this.teacher.id.toString()).subscribe(teachersUniversities => {
+        this.basicService.getUniversitiesByTeacher(this.teacher.id).subscribe(teachersUniversities => {
             this.teachersUniversities = teachersUniversities
         });
     }
     getReviews(){
-        this.basicService.getReviewsByTeacher(this.teacher.id.toString()).subscribe(reviews=>{this.reviews = reviews});
+        this.basicService.getReviewsByTeacher(this.teacher.id).subscribe(reviews=>{this.reviews = reviews});
     }
     getPositiveReviews(){
-        this.basicService.getPositiveReviewsByTeacher(this.teacher.id.toString()).subscribe(positiveReviews =>{
+        this.basicService.getPositiveReviewsByTeacher(this.teacher.id).subscribe(positiveReviews =>{
             this.positiveReviews = positiveReviews
         });
     }
     getNegativeReviews() {
-        this.basicService.getNegativeReviewsByTeacher(this.teacher.id.toString()).subscribe(negativeReviews => {
+        this.basicService.getNegativeReviewsByTeacher(this.teacher.id).subscribe(negativeReviews => {
             this.negativeReviews = negativeReviews
         });
     }

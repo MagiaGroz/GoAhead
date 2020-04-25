@@ -31,6 +31,7 @@ export class BasicService extends ParentService {
 
   setTeacherForDetailedView(teacher: Teacher){
       this.selectedTeacher = teacher;
+      localStorage.setItem('detailedMovie', JSON.stringify(teacher));
   }
   getSelectedTeacher(): Teacher{
       return this.selectedTeacher;
