@@ -23,7 +23,11 @@
 }
 
 .description {
-    width: 50%;
+    font-size:20px;
+    width: 70%;
+    height:150px;
+    background-color:#9172DB;
+
 }
 
 .photo {
