@@ -62,8 +62,8 @@
     color: rgb(89, 149, 233);
     background-size: 300px 100px;
     text-align: center;
-    display: flex;
-    margin-left: 600px;
+    display: flexbox;
+   
 }
 
 #img {
@@ -76,9 +76,8 @@
 
 #i {
     margin-top: 20px;
-    display: flex;
+    display: flexbox;
     font-size: 30px;
-    margin-left: 600px;
     margin-bottom: 10px;
 }
 
@@ -86,6 +85,7 @@
     text-align: center;
     align-content: center;
     margin-top: 100px;
+    align-items: center;
 }
 
 body {
