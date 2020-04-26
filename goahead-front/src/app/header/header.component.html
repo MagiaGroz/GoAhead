@@ -10,7 +10,7 @@
                     <a routerLink=""><span class="go-logo">Go</span>Ahead!</a>
                 </li>
                 <li class="nav-link dropdown-menu" (mouseenter)="dropdownMenuDisplay('courses')" (mouseleave)="dropdownMenuHide('courses')">
-                    <a routerLink="courses">
+                    <a (click)="directToCourses()">
                         <span class="link-name">Courses</span>
                         <span class="dropdown-btn">▾</span>
                     </a>
@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="nav-link dropdown-menu" (mouseenter)="dropdownMenuDisplay('teachers')" (mouseleave)="dropdownMenuHide('teachers')">
-                    <a routerLink="teachers">
+                    <a (click)="directToTechers()">
                         <span class="link-name">Teachers</span>
                         <span class="dropdown-btn">▾</span>
                     </a>
@@ -36,7 +36,7 @@
                     </div>
                 </li>
                 <li class="nav-link dropdown-menu" (mouseenter)="dropdownMenuDisplay('universities')" (mouseleave)="dropdownMenuHide('universities')">
-                    <a routerLink="universities">
+                    <a (click)="directToUniversities()">
                         <span class="link-name">Universities</span>
                         <span class="dropdown-btn">▾</span>
                     </a>

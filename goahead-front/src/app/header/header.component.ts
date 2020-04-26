@@ -69,4 +69,13 @@ export class HeaderComponent implements OnInit {
       this.router.navigateByUrl("").then();
     });
   }
+  directToCourses(){
+      this.router.navigateByUrl('courses');
+  }
+  directToTechers(){
+      this.router.navigateByUrl('teachers');
+  }
+  directToUniversities(){
+      this.router.navigateByUrl('universities');
+  }
 }
