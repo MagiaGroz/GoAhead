@@ -20,7 +20,7 @@ export class TeacherDetailComponent implements OnInit {
     constructor(private basicService: BasicService, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
-        this.getTeacher();
+        this.teacher = this.basicService.getSelectedTeacher();
         this.getUniversityByTeacher();
         this.getReviews();
         this.getPositiveReviews();
@@ -45,10 +45,7 @@ export class TeacherDetailComponent implements OnInit {
         this.isPositive = false;
     }
 
-    getTeacher() {
-        const id = +this.route.snapshot.paramMap.get('id');
-        this.basicService.getTeacher(id).subscribe(teacher => this.teacher = teacher);
-    }
+
     getUniversityByTeacher() {
         this.basicService.getUniversitiesByTeacher(this.teacher.id).subscribe(teachersUniversities => {
             this.teachersUniversities = teachersUniversities

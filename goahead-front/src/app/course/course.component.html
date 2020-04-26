@@ -1,4 +1,9 @@
 <div class="course-item">
-    <img class="course-photo" src="{{course.photo}}">
-    <a class="course-name" routerLink="course-detail" (click)="setCourseForDetailedView()">{{course.name}}</a>
+    <div class="photo">
+        <img class="course-photo" src="{{course.image_ref}}">
+    </div>
+    <div class="description">
+        <a class="course-name" (click)="setCourseForDetailedView()">{{course.name}}</a>
+        <p class="course-description">{{course.description}}</p>
+    </div>
 </div>
