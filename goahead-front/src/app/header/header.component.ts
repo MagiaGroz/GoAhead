@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
       this.basicService.setTeacherForDetailedView(teacher);
       this.router.navigateByUrl('teacher-detail')
   }
-  unItemClick(university: University){
+  uniItemClick(university: University){
       this.basicService.setUniversityForDetailView(university);
       this.router.navigateByUrl('university-detail');
   }
