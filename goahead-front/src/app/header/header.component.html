@@ -15,15 +15,9 @@
                         <span class="dropdown-btn">▾</span>
                     </a>
                     <div class="options-window-container" *ngIf="displayDropdownWindows.courses">
-                        <ul class="options">
+                        <ul class="options" *ngFor="let courseitem of courseList">
                             <li class="option">
-                                <div class="option-name">Calculus II</div>
-                            </li>
-                            <li class="option">
-                                <div class="option-name">Calculus I</div>
-                            </li>
-                            <li class="option">
-                                <div class="option-name">Differential Equations</div>
+                                <div (click)="courseItemClick(courseitem)" class="option-name">{{courseitem.name}}</div>
                             </li>
                         </ul>
                     </div>
@@ -34,15 +28,9 @@
                         <span class="dropdown-btn">▾</span>
                     </a>
                     <div class="options-window-container" *ngIf="displayDropdownWindows.teachers">
-                        <ul class="options">
+                        <ul class="options" *ngFor="let teacheritem of teacherList">
                             <li class="option">
-                                <div class="option-name">Calculus II</div>
-                            </li>
-                            <li class="option">
-                                <div class="option-name">Calculus I</div>
-                            </li>
-                            <li class="option">
-                                <div class="option-name">Differential Equations</div>
+                                <div (click)="teacherItemClick(teacheritem)" class="option-name">{{teacheritem.name}}</div>
                             </li>
                         </ul>
                     </div>
@@ -53,15 +41,9 @@
                         <span class="dropdown-btn">▾</span>
                     </a>
                     <div class="options-window-container" *ngIf="displayDropdownWindows.universities">
-                        <ul class="options">
+                        <ul class="options" *ngFor="let uniitem of uniList">
                             <li class="option">
-                                <div class="option-name">Calculus II</div>
-                            </li>
-                            <li class="option">
-                                <div class="option-name">Calculus I</div>
-                            </li>
-                            <li class="option">
-                                <div class="option-name">Differential Equations</div>
+                                <div (click)="uniItemClick(uniitem)" class="option-name">{{uniitem.name}}</div>
                             </li>
                         </ul>
                     </div>
