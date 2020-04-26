@@ -1,6 +1,7 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated
-
+from django_filters import rest_framework as filters
+from rest_framework.filters import OrderingFilter
 from ..models import Course, Teacher, University
 
 from ..serializers import CourseSerializer, TeacherSerializer, UniversitySerializer
@@ -13,6 +14,9 @@ class UniversityListAPIView(generics.ListCreateAPIView):
 class CourseListAPIView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    filter_backends = (DjangoFilterBackend,
+                       OrderingFilter)
+    ordering_fields = ('price','name')
 
 class CourseDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Course.objects.all()
