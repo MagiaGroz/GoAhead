@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import Course,University,Teacher,Review
+from .models import Course,University,Teacher,Review
 
 admin.site.register(Course)
 admin.site.register(University)
