@@ -1,12 +1,15 @@
-<p>Taecher Details</p>
-<div *ngIf="teacher">
+
+<div class="teacher" *ngIf="teacher">
+    <div class="teacher-detail">
     <p>Teacher id: {{teacher.id}}</p>
     <p>Teacher name: {{teacher.name}}</p>
     <p>Teacher photo:{{teacher.photo}}</p>
     <div *ngFor="let university of teachersUniversities">
         <app-university [university]="university"></app-university>
     </div>
-    <p>Teacher degree:{{teacher.degree}}</p>
+    <div class="description">
+    <p >Teacher degree:{{teacher.degree}}</p>
+</div>
     <div>
         <button (click)="onDefault()">All</button>
         <button (click)="onPositive()">Positive</button>
@@ -31,3 +34,7 @@
         </div>
     </div>
 </div>
+</div>
+
+
+

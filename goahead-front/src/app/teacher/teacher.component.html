@@ -1,4 +1,5 @@
-<div>
-    <img src="{{teacher.photo}}">
-    <a (click)="setTeacherForDetailedView(teacher)">{{teacher.name}}</a>
+<div class="teacher-item">
+    <img  class="teacher-photo" src="{{teacher.photo}}">
+    <a class="teacher-name" routerLink="teacher-detail" (click)="setTeacherForDetailedView(teacher)">{{teacher.name}}</a>
 </div>
+

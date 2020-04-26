@@ -32,7 +32,8 @@
 }
 
 #submit {
-    margin-left: 650px;
+    margin-left: 400px;
+    margin-right:350px;
     font-size: 50px;
     background-color: rgb(103, 161, 231);
     border: none;
