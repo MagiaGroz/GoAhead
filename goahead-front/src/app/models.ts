@@ -2,7 +2,7 @@ export interface Course{
     id:number;
     name:string;
     author: string;
-    photo: string;
+    image_ref: string;
     description:string;
     price:string;
     user:number;
@@ -10,7 +10,7 @@ export interface Course{
 export interface Teacher{
     id:number;
     name:string;
-    photo:string;
+    image_ref:string;
     university:University;
     degree:number;
     course:Course;
@@ -26,7 +26,7 @@ export interface Review{
 
 export interface University{
     name: string;
-    photo: string;
+    image_ref: string;
     description: string;
     year: string;
 } 

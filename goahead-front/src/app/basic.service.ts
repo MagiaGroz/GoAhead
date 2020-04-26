@@ -31,6 +31,7 @@ export class BasicService extends ParentService {
 
   setTeacherForDetailedView(teacher: Teacher){
       this.selectedTeacher = teacher;
+      localStorage.setItem('detailedMovie', JSON.stringify(teacher));
   }
   getSelectedTeacher(): Teacher{
       return this.selectedTeacher;
@@ -45,27 +46,27 @@ export class BasicService extends ParentService {
 
   //methods for django views
   getCourseList(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${this.BASE_URL}/api/courses/`);
+    return this.http.get<Course[]>(`${this.BASE_URL}/api/courses`);
   }
   
   getTeacherList(): Observable<Teacher[]> {
-      return this.http.get<Teacher[]>(`${this.BASE_URL}/api/teachers/`);
+      return this.http.get<Teacher[]>(`${this.BASE_URL}/api/teachers`);
   }
 
   getUniversityList(): Observable<University[]> {
-      return this.http.get<University[]>(`${this.BASE_URL}/api/universities/`);
+      return this.http.get<University[]>(`${this.BASE_URL}/api/universities`);
   }
 
   getCourse(id): Observable<Course> {
-    return this.http.get<Course>(`${this.BASE_URL}/api/courses/${id}/`);
+    return this.http.get<Course>(`${this.BASE_URL}/api/courses/${id}`);
   }
 
   getTeacher(id): Observable<Teacher> {
-      return this.http.get<Teacher>(`${this.BASE_URL}/api/teachers/${id}/`);
+      return this.http.get<Teacher>(`${this.BASE_URL}/api/teachers/${id}`);
   }
   
   getUniversity(id): Observable<University> {
-    return this.http.get<University>(`${this.BASE_URL}/api/universities/${id}/`);
+    return this.http.get<University>(`${this.BASE_URL}/api/universities/${id}`);
   }
     
   getTeachersByCourse(pk: string): Observable<Teacher[]> {
@@ -90,13 +91,13 @@ export class BasicService extends ParentService {
 
 
   deleteCourse(id): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/api/courses/${id}/`);
+    return this.http.delete(`${this.BASE_URL}/api/courses/${id}`);
   }
   deleteTeacher(id): Observable<any> {
-      return this.http.delete(`${this.BASE_URL}/api/teachers/${id}/`);
+      return this.http.delete(`${this.BASE_URL}/api/teachers/${id}`);
   }
   deleteUniversity(id): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/api/universities/${id}/`);
+    return this.http.delete(`${this.BASE_URL}/api/universities/${id}`);
   }
 
   
@@ -115,7 +116,7 @@ export class BasicService extends ParentService {
     });
   }
   logout(): Promise<any> {
-    return this.post(`${this.BASE_URL}/logout`, {});
+    return this.post(`${this.BASE_URL}/logout/`, {});
   }
 
 

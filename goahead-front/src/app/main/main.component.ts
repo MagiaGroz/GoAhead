@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {BasicService} from '../basic.service'
+import {BasicService} from '../basic.service';
+
+import { database } from "../database"
 
 @Component({
   selector: 'app-main',
@@ -7,6 +9,7 @@ import {BasicService} from '../basic.service'
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  products=database;
 
   constructor(private basicService: BasicService) { }
 
@@ -19,6 +22,9 @@ export class MainComponent implements OnInit {
 
   checkIfSuperUser(){
       return this.basicService.isSuperUser;
+  }
+  click(){
+    alert("You left a request");
   }
 
 }
