@@ -17,6 +17,7 @@ class CourseListAPIView(generics.ListCreateAPIView):
     filter_backends = (DjangoFilterBackend,
                        OrderingFilter)
     ordering_fields = ('price','name')
+    filterset_fields = ('user',)
 
 class CourseDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Course.objects.all()

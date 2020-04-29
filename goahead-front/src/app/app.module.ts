@@ -21,6 +21,7 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { CourseComponent } from './course/course.component';
 import {AuthInterceptor} from "./auth.interceptor";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { MyCoursesListComponent } from './my-courses-list/my-courses-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
     UniversityDetailComponent,
     UniversityComponent,
     TeacherComponent,
-    CourseComponent
+    CourseComponent,
+    MyCoursesListComponent
   ],
   imports: [
     BrowserModule,

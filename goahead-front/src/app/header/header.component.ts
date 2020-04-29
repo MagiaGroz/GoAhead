@@ -62,12 +62,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl("login").then();
   }
   logout() {
-    this.basicService.logout().then((res) => {
+   
       localStorage.removeItem("token");
       this.basicService.isLoggedIn = false;
       this.basicService.isSuperUser = false;
       this.router.navigateByUrl("").then();
-    });
+   
   }
   directToCourses(){
       this.router.navigateByUrl('courses');
@@ -78,4 +78,7 @@ export class HeaderComponent implements OnInit {
   directToUniversities(){
       this.router.navigateByUrl('universities');
   }
+  directToMyCourses(){
+    this.router.navigateByUrl('mycourses');
+}
 }

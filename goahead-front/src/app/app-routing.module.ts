@@ -9,6 +9,7 @@ import { UniversitiesListComponent } from './universities-list/universities-list
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { TeacherDetailComponent } from './teacher-detail/teacher-detail.component';
 import { UniversityDetailComponent } from './university-detail/university-detail.component';
+import { MyCoursesListComponent } from './my-courses-list/my-courses-list.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,10 @@ const routes: Routes = [
             {
                 path: 'university-detail',
                 component: UniversityDetailComponent
+            },
+            {
+                path: 'mycourses',
+                component: MyCoursesListComponent
             }
         ]
     }

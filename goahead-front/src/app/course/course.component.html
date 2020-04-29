@@ -2,8 +2,10 @@
     <div class="photo">
         <img class="course-photo" src="{{course.image_ref}}">
     </div>
+    <button class="buy" (click)="addCourseToMyList()">Buy course</button>
     <div class="description">
         <a class="course-name" (click)="setCourseForDetailedView()">{{course.name}}</a>
         <p class="course-description">{{course.description}}</p>
+        
     </div>
 </div>

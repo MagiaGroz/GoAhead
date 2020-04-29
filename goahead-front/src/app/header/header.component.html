@@ -47,7 +47,9 @@
                         </ul>
                     </div>
                 </li>
-
+                <li class="nav-link dropdown-menu">
+                    <a (click)="directToMyCourses()">My courses</a>
+                </li>
             </ul>
             <ul class="right-links">
                 <li class="nav-link">
@@ -61,9 +63,7 @@
                 <li class="nav-link">
                     <a id="login-logout-btn" (click)="isLoggedIn ? logout() : login() ">{{ isLoggedIn ? 'Logout' : 'Login'}}</a>
                 </li>
-                <!-- <li class="nav-link">
-            <a id="logout-btn" (click)="logout()" *ngIf="!isLoggedIn">Logout</a>
-          </li> -->
+            
             </ul>
         </div>
     </nav>

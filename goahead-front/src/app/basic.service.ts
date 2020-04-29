@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import {Course, Token,Teacher, University, Review} from "./models";
+import {Course, Token,Teacher, University, Review, User} from "./models";
 import { ParentService } from './parent.service';
 
 
@@ -103,10 +103,12 @@ export class BasicService extends ParentService {
   
 
   //authentication
-  createUser(usernamE: string, passworD: string) {
-    return this.post(`${this.BASE_URL}/signup`, {
+  createUser(usernamE: string, passworD: string, email: string) {
+    return this.post(`${this.BASE_URL}/users`, {
         username: usernamE,
-        password: passworD
+        password: passworD,
+        email: email,
+        is_superuser: true
     });
   }
   login(usernamE: string, passworD: string): Promise<Token> {
@@ -119,10 +121,22 @@ export class BasicService extends ParentService {
     return this.post(`${this.BASE_URL}/logout/`, {});
   }
 
-
-  
-
-
+  addCourseToMyList(id,userId): Observable<Course> {
+    return this.http.patch<Course>(`${this.BASE_URL}/api/courses/${id}`,{
+      "user": userId
+    });
+  }
+  RemoveCourseFromMyList(id): Observable<Course> {
+    return this.http.patch<Course>(`${this.BASE_URL}/api/courses/${id}`,{
+      "user": 0
+    });
+  }
+  getUserId(name): Observable<User[]> {
+    return this.http.get<User[]>(`${this.BASE_URL}/users?username=${name}`);
+  }
+  getMyCourses(id): Observable<Course[]> {
+    return this.http.get<Course[]>(`${this.BASE_URL}/api/courses?user=${id}`);
+  }
  
 
 }

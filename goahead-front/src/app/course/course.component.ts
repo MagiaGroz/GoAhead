@@ -21,5 +21,9 @@ export class CourseComponent implements OnInit {
       this.basicService.setCourseForDetailedView(this.course);
       this.router.navigateByUrl('course-detail');
   }
-
+  addCourseToMyList(){
+    this.basicService.addCourseToMyList(this.course.id,localStorage.getItem('userId')).subscribe(course=>{
+      
+    });
+  }
 }

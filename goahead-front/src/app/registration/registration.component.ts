@@ -11,6 +11,7 @@ export class RegistrationComponent implements OnInit {
     public password: string;
     public username: string;
     public repeatedPassword: string;
+    public email: string;
     constructor(private router: Router, private basicService: BasicService) { }
 
     ngOnInit(): void {
@@ -27,8 +28,8 @@ export class RegistrationComponent implements OnInit {
             if (this.password !== this.repeatedPassword) {
                 alert('Passwords do not match, please make sure that your passwords match.');
             } else {
-                this.basicService.createUser(this.username, this.password).then(res => {
-                alert('You have successgully signed up!');
+                this.basicService.createUser(this.username, this.password, this.email).then(res => {
+                alert('You have successfully signed up!');
                 this.basicService.login(this.username, this.password).then(res => {
                    localStorage.setItem('token', res.token);
                    this.basicService.isLoggedIn = true;

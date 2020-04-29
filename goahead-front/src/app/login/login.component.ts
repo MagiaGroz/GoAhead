@@ -37,7 +37,12 @@ export class LoginComponent implements OnInit {
                   this.username = '';
                   this.password = '';
               });
+            this.basicService.getUserId(this.username).subscribe(users=>
+                {
 
+                  
+                localStorage.setItem('userId', String(users[0].id))
+            });
 
               
       }

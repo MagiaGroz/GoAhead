@@ -33,4 +33,10 @@ export interface University{
  export interface Token{
     token: string;
   }
+export interface User{
+    id:number;
+    email:string;
+    username:string;
+    is_superuser:boolean;
+}
   

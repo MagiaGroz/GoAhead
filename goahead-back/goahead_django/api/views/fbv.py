@@ -4,29 +4,6 @@ from ..models import Teacher, Course, Review, University
 from rest_framework import status
 from rest_framework.response import Response
 
-# @api_view(['GET', 'PUT', 'DELETE'])
-# def course_detail(request, id):
-#     try:
-#         course = Course.objects.get(id=id)
-#     except Course.DoesNotExist as e:
-#         return Response({'error': str(e)})
-#
-#     if request.method == 'GET':
-#         serializer = CourseSerializer(course)
-#         return Response(serializer.data)
-#
-#     elif request.method == 'PUT':
-#         serializer = CourseSerializer(instance=course, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data)
-#         return Response({'error': serializer.errors})
-#
-#     elif request.method == 'DELETE':
-#         course.delete()
-#
-#         return Response({'deleted': True})
-
 @api_view(['GET', 'PUT', 'DELETE'])
 def teacher_detail(request, id):
     try:
