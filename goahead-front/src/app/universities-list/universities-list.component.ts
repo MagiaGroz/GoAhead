@@ -19,4 +19,8 @@ export class UniversitiesListComponent implements OnInit {
   getUniversitiesList(){
       this.basicService.getUniversityList().subscribe(universities => {this.universities = universities});
   }
+  selectUniversity(university: University){
+    this.basicService.setUniversityForDetailView(university);
+    this.router.navigateByUrl('university-detail');
+}
 }

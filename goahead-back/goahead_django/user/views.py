@@ -9,16 +9,13 @@ from rest_framework.response import Response
 from .serializers import UserSerializer
 
 
-class UserCreateView(generics.CreateAPIView):
-
-    def get_queryset(self):
-        return User.objects.all()
-
-    def get_serializer_class(self):
-        return UserSerializer
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = ('username',)
     permission_classes = (BasePermission,)
+
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()

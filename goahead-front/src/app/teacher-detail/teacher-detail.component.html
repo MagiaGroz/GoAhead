@@ -1,7 +1,7 @@
 <div class="teacher" *ngIf="teacher">
     <div class="teacher-detail">
         <p>Teacher name: {{teacher.name}}</p>
-        <img id="img" src="{{teacher.image_ref}}">
+        <img id="img" src="{{teacher.image_ref}}" alt="Загрузка">
         <div *ngFor="let university of teachersUniversities">
             <app-university [university]="university"></app-university>
         </div>

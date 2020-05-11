@@ -12,3 +12,8 @@
     font-weight: 700;
     text-decoration: none;
 }
+#img {
+display: inline-flex;
+width: 50vh;
+height: 50vh;
+}
