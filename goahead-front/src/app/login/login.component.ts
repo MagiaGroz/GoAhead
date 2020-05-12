@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
       if (this.username === '' || this.password === '') {
           alert('Fill in all the fields!');
       } else {
-          alert('Logged in!');
           this.basicService.login(this.username, this.password).then(res => {
               localStorage.setItem('token', res.token);
               this.basicService.isLoggedIn = true;
